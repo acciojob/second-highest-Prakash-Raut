@@ -9,7 +9,25 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-			//Write your code here
+		  if (nums.length < 2) return Number.NEGATIVE_INFINITY;
+
+		  let first = Number.NEGATIVE_INFINITY;
+		  let second = Number.NEGATIVE_INFINITY;
+
+		  for (const cur of nums) {
+		    if (cur > first) {
+		      second = first;
+		      first = cur;
+		    } else if (cur > second && cur !== first) {
+		      second = cur;
+		    }
+		  }
+
+		  if (second === Number.NEGATIVE_INFINITY) {
+		    return Number.NEGATIVE_INFINITY;
+		  }
+
+		  return second;
 			
 		}
 
